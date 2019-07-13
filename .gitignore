@@ -1,32 +1,81 @@
-# Prerequisites
-*.d
-
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Fortran module files
-*.mod
-*.smod
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+class SelectOption
+{
+	public:
+	void option()
+	{
+		char ch;
+		Inquiry in;
+		PlanYourTravel p;
+		int a;
+		do
+		{
+			cout<<"\nKindly :"<<endl;
+			cout<<"Press 1 for Travel Information :: "<<endl;
+			cout<<"Press 2 to Plan Your Journey :: "<<endl;
+			cout<<"Press 3 to Check your Ticket Status :: "<<endl;
+			cout<<"Press 4 to Cancel your Ticket :: "<<endl;
+			cout<<"Press 5 to Update Your Booked Ticket :: " <<endl;
+			cout <<"Press 6 to Print All Tickets :: " <<endl;
+			cin>>a;
+			switch(a)
+			{
+				case 1:
+				int b;
+				cout<<"\nSelect whose information you desire:"<<endl;
+				cout<<"1) Airport Information"<<endl;
+				cout<<"2) Route Map"<<endl;
+				cout<<"3) Health and Safety"<<endl;
+				cout<<"4) Feedback"<<endl;
+				cin>>b;
+				switch(b)
+				{
+					case 1:
+						in.airportInformation();
+					break;
+		
+					case 2:
+					  	in.routeMap();
+					break;
+		
+					case 3:
+						in.healthSafety();
+					break;
+		
+					case 4:
+						in.feedback();
+					break;
+		
+					default:
+						cout<<"Error!"<<endl;
+					break;
+				 }
+				 break;
+		
+				 case 2:
+				 	p.bookticket();
+				 break;
+		
+				 case 3:
+				 	p.status();
+				 break;
+		
+				 case 4:
+				 	p.cancel();
+				 break;
+		
+				 case 5:
+				 	p.updateTicket();
+				 break;
+		
+				 case 6:
+				 	p.viewAllTickets();
+				 break;
+		
+				 default:
+				 cout<<"Error!"<<endl;
+			}
+			cout<<"\n\nDo you want to Continue"<<endl;
+			cin>>ch;
+		}while(ch=='Y'|| ch=='y');
+	}
+};
